@@ -1,0 +1,52 @@
+pipeline_name: bfs
+
+# --- train ---
+batch_size: 32
+learning_rate: 0.0003
+weight_decay: 0.0
+num_iterations: 1000
+eval_each: 500
+stepwise_training: false
+use_hints: true
+hint_loss_weight: false
+processor_lower_t: 0.5
+processor_upper_t: 1.
+states_lower_t: 0.5
+states_upper_t: 1.
+use_noise: true
+
+# --- data ---
+weighted_graphs: false
+generate_random_numbers: false
+generate_start: true
+
+sampler_name:
+  train: er
+  val: er
+  test: er
+
+samples_count:
+  train: 10000
+  val: 256
+  test: 256
+
+problem_size:
+  train: 8
+  val: 17
+  test: 160
+
+# --- model ---
+h: 128
+use_discrete_bottleneck: true
+node_states_count: 2
+edge_states_count: 2
+message_top_one_choice: reciever
+position_dim: 0
+steps_mul: 1
+output_location: edge
+update_scalars: false
+temp_on_eval: 0.
+
+# --- logs, io ---
+models_directory: models
+tensorboard_logs: true
