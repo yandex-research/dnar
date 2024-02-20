@@ -39,5 +39,3 @@ assert node_state_transition(model, sender_state=DISCOVERED, reciever_state=UNDI
 ```
 We note that the hint sequence does not specify the edge along which the message will be sent, and the tests should take into account the actual dynamics of the particular model.
 
-## Citation
-TBD
